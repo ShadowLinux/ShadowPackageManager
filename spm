@@ -1,0 +1,14 @@
+# /bin/sh
+
+IP="localhost"
+COMMAND=$1
+PACKAGE=$2
+
+function install
+{
+    wget $IP/SPMScripts/$PACKAGE.sh
+    chmod +x $PACKAGE.sh
+    ./$PACKAGE.sh install
+}
+
+$COMMAND
